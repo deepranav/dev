@@ -16,8 +16,11 @@ def keep_alive():
 threading.Thread(target=keep_alive).start()
 
 
+print(111)
 from main import main
+print("222")
 threading.Thread(target=main).start()
+print("333")
 
 
 from flask import Flask
