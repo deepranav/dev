@@ -20,7 +20,7 @@ class user_connection:
 
         self.presence = presence
         if self.presence is None:
-            self.presence = random.choice(presences)
+            self.presence = json.loads(random.choice(presence_data))
 
         self.browser = browser
         if self.browser is None:
@@ -215,7 +215,7 @@ presence_data = open("presences.txt", "r", encoding="utf8").read().split("\n")
 print("a")
 while "" in presence_data: presence_data.pop(presence_data.index(""))
 print("b")
-presences = [{"status": json.loads(d)["status"], "activities": json.loads(d)["activities"]} for d in presence_data]
+# presences = [{"status": json.loads(d)["status"], "activities": json.loads(d)["activities"]} for d in presence_data]
 print("c")
 
 token_data = open("tokens.txt", "r", encoding="utf8").read().split("\n")
