@@ -153,10 +153,16 @@ def create_connection(connections, token, presence=None, browser=None, descripti
     print(description + ": " + str(connection.user))
 
 def create_connections(connections, tokens):
+    print(333333333333)
     for token in tokens:
-        while threading.active_count() > 200:
-            pass  # print(".")
-        threading.Thread(target=create_connection, args=(connections, token)).start()
+        while True:
+            try:
+                threading.Thread(target=create_connection, args=(connections, token)).start()
+            except:
+                print("no more threads")
+                time.sleep(1)
+            else:
+                break
 
 
 def heartbeat_batch(tokens):
@@ -214,7 +220,9 @@ tokens = [d.split(":")[3] for d in token_data if d.count(":") > 2 and d.endswith
 random.shuffle(tokens)
 
 def main():
+    print(11111111111)
     main_batch(tokens)
+    print(22222222222)
 
 if __name__ == "__main__":
     # tokens = [tokens[-1]]
