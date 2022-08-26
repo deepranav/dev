@@ -15,7 +15,7 @@ def keep_alive():
             time.sleep(60 * 5)
 threading.Thread(target=keep_alive).start()
 
-
+print("111")
 print(111)
 from main import main
 print("222")
