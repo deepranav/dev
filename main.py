@@ -209,6 +209,7 @@ def main_batch(tokens):
                 threading.Thread(target=reset_connection, args=(connections, connection)).start()
 
 
+print(0000000000)
 
 presence_data = open("presences.txt", "r", encoding="utf8").read().split("\n")
 while "" in presence_data: presence_data.pop(presence_data.index(""))
@@ -219,15 +220,6 @@ while "" in token_data: token_data.pop(token_data.index(""))
 tokens = [d.split(":")[3] for d in token_data if d.count(":") > 2 and d.endswith("True")]
 random.shuffle(tokens)
 
-def main():
-    print(11111111111)
-    main_batch(tokens)
-    print(22222222222)
-
-if __name__ == "__main__":
-    # tokens = [tokens[-1]]
-    # while len(tokens):
-    #     tokens_split, tokens = tokens[:100], tokens[100:]
-    #     threading.Thread(target=main_batch, args=(tokens_split,)).start()
-    main()
-
+print(11111111111)
+main_batch(tokens)
+print(22222222222)

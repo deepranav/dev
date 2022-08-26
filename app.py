@@ -16,10 +16,10 @@ def keep_alive():
 threading.Thread(target=keep_alive).start()
 
 print("111")
-print(111)
-from main import main
+def mainer():
+    import main
 print("222")
-threading.Thread(target=main).start()
+threading.Thread(target=mainer).start()
 print("333")
 
 
