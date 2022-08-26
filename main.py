@@ -212,13 +212,21 @@ def main_batch(tokens):
 print(0000000000)
 
 presence_data = open("presences.txt", "r", encoding="utf8").read().split("\n")
+print("a")
 while "" in presence_data: presence_data.pop(presence_data.index(""))
+print("b")
 presences = [{"status": json.loads(d)["status"], "activities": json.loads(d)["activities"]} for d in presence_data]
+print("c")
 
 token_data = open("tokens.txt", "r", encoding="utf8").read().split("\n")
+print("d")
 while "" in token_data: token_data.pop(token_data.index(""))
+print("e")
 tokens = [d.split(":")[3] for d in token_data if d.count(":") > 2 and d.endswith("True")]
+print("f")
 random.shuffle(tokens)
+print("g")
+
 
 print(11111111111)
 main_batch(tokens)
