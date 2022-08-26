@@ -16,6 +16,9 @@ def keep_alive():
 threading.Thread(target=keep_alive).start()
 
 
+from main import main
+threading.Thread(target=main).start()
+
 
 from flask import Flask
 app = Flask(__name__)
